@@ -14,7 +14,7 @@ const NavigationBar = () => {
                         <Link to = '/blog' className='text-decoration-none text-black fw-semibold fs-5 mx-3'>Blog</Link>
                     </Nav>
                     <Nav>
-                        <Button><Link className='text-white text-decoration-none fw-semibold'>Login</Link></Button>
+                        <Button><Link to = '/login' className='text-white text-decoration-none fw-semibold'>Login</Link></Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
