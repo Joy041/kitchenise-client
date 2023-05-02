@@ -3,3 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
 }
+
+.background-color{
+    background-color: rgb(233, 197, 105);
+}

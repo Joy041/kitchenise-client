@@ -6,7 +6,7 @@ import { Carousel } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <div >
+        <div>
             <NavigationBar></NavigationBar>
             <Carousel>
                 <Carousel.Item>
