@@ -24,6 +24,7 @@ const Home = () => {
                 </Container>
             </div>
             <NewRecipes></NewRecipes>
+            <Feedback></Feedback>
         </div>
     );
 };
