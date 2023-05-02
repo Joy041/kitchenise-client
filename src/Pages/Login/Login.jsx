@@ -1,14 +1,18 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import NavigationBar from '../../SharedPage/NavigationBar/NavigationBar';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
-    const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
-    const {login, passwordReset} = useContext(AuthContext)
-    const emailRef = useRef()
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const {login, passwordReset} = useContext(AuthContext);
+    const emailRef = useRef();
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/' 
 
 
     const handleLoginForm = (event) => {
@@ -27,6 +31,7 @@ const Login = () => {
             console.log(loggedUser)
             setSuccess('Login successful')
             form.reset()
+            navigate(from, {replace: true})
         })
     }
 

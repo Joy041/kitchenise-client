@@ -10,7 +10,7 @@ const Feedback = () => {
             <h1 className='text-center mt-5'>Feedback</h1><hr className='w-25 mx-auto text-success' />
             <div className='d-md-flex justify-content-md-center'>
                 <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
-                    <Card.Header as="h5"><img src={first} className='rounded-circle feedback-img me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
+                    <Card.Header as="h5"><img src={first} className='rounded-circle me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
                     <Card.Body>
                         <Card.Text>
                             Overall, the food recipe website is well-designed and easy to navigate. The layout is clean and visually appealing, with high-quality images that showcase the dishes. The search functionality is also very useful, allowing users to filter recipes by cuisine, course, ingredients, and more.
@@ -18,7 +18,7 @@ const Feedback = () => {
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
-                    <Card.Header as="h5"><img src={second} className='rounded-circle feedback-img me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
+                    <Card.Header as="h5"><img src={second} className='rounded-circle me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
                     <Card.Body>
                         <Card.Text>
                             One thing that stands out is the quality of the content. The articles are well-written and informative, providing readers with valuable insights and tips. The visuals, such as photos and infographics, also add to the overall presentation and make the content more engaging.
@@ -26,7 +26,7 @@ const Feedback = () => {
                     </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
-                    <Card.Header as="h5"><img src={third} className='rounded-circle feedback-img me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
+                    <Card.Header as="h5"><img src={third} className='rounded-circle me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
                     <Card.Body>
                         <Card.Text>
                             This website has a modern and sleek design. The site's content is also impressive, with a variety of articles and resources that are well-written and informative. The topics covered are diverse and cater to a wide range of interests, which is great for keeping users engaged.

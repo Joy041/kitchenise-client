@@ -6,6 +6,7 @@ import RecipeInfo from "../Pages/RecipeInfo/RecipeInfo";
 import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoute from "../Route/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
     },
     {
       path: 'recipes',
-      element: <Recipes></Recipes>,
+      element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
       children: [
         {
             path: ':id',
