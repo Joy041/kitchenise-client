@@ -10,9 +10,7 @@ const Footer = () => {
             <Container className='footer-grid'>
                 <div>
                     <h1 className='fw-bold fs-1 text-white'><span className='text-success'>Kitchen</span>ise</h1>
-                    <Link className='text-decoration-none fw-semibold text-white fs-5'>Home</Link>
-                    <Link className='text-decoration-none fw-semibold text-white fs-5 ms-4'>Blog</Link>
-                    
+                    <p className='text-white'>Kitchenise is a food recipes based website. Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ea!</p>
                 </div>
                 <div className='text-center'>
                     <h1 className='text-white'>Need help?</h1>
