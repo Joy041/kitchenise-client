@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import ChefInfo from '../ChefInfo/ChefInfo';
 import NewRecipes from '../NewRecipes/NewRecipes';
 import Feedback from '../Feedback/Feedback';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     const chefs = useLoaderData()
@@ -25,6 +26,7 @@ const Home = () => {
             </div>
             <NewRecipes></NewRecipes>
             <Feedback></Feedback>
+            <Footer></Footer>
         </div>
     );
 };

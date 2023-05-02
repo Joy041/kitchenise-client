@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
 import './ChefInfo.css'
+import { Link } from 'react-router-dom';
 
 
 const ChefInfo = ({ chef }) => {
@@ -22,7 +23,7 @@ const ChefInfo = ({ chef }) => {
                        Likes : {likes}
                     </Card.Text>
                 </Card.Body>
-                <button className='btn btn-primary w-100 view-recipes-btn'>View recipes</button>
+                <Link to = {`/recipes/${_id}`}><button className='btn btn-primary w-100 view-recipes-btn'>View recipes</button></Link>
             </Card>
         </div>
     );
