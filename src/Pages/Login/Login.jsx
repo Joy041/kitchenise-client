@@ -3,16 +3,18 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import NavigationBar from '../../SharedPage/NavigationBar/NavigationBar';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaGoogle, FaGithub } from "react-icons/fa";
+
 
 const Login = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    const {login, passwordReset} = useContext(AuthContext);
+    const { login, passwordReset, googleLogin, githubLogin } = useContext(AuthContext);
     const emailRef = useRef();
     const navigate = useNavigate();
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || '/' 
+    const from = location.state?.from?.pathname || '/'
 
 
     const handleLoginForm = (event) => {
@@ -26,25 +28,50 @@ const Login = () => {
         setSuccess('')
 
         login(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            setSuccess('Login successful')
-            form.reset()
-            navigate(from, {replace: true})
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                setSuccess('Login successful')
+                form.reset()
+                navigate(from, { replace: true })
+            })
     }
 
     const handleForgetPass = () => {
         const email = emailRef.current.value
         passwordReset(email)
-       .then(result => {
-        alert('Check your email')
-        return
-       })
-       .catch(error => setError(error.message))
+            .then(result => {
+                alert('Check your email')
+                return
+            })
+            .catch(error => setError(error.message))
 
     }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            setSuccess('Login Successful')
+            navigate(from, { replace: true })
+        })
+        .catch(error => setError(error.message))
+    }
+
+
+    const handleGithubLogin = () => {
+        githubLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            setSuccess('Login Successful')
+            navigate(from, { replace: true })
+        })
+        .catch(error => setError(error.message))
+    }
+
+
 
 
     return (
@@ -71,7 +98,14 @@ const Login = () => {
                     <Button variant="primary" type="submit" className='w-100'>
                         Login
                     </Button>
-                    <p className='mt-3'>Don’t Have An Account ? <Link to='/register' className='text-decoration-none'>Register</Link></p>
+                    <p className='mt-3 text-center'>Don’t Have An Account ? <Link to='/register' className='text-decoration-none'>Register</Link></p>
+                    <p className='text-center'>-----------------OR-----------------</p>
+                    <Button variant="primary" onClick={handleGoogleLogin} type="submit" className='w-100 bg-white text-black border-dark fw-semibold'>
+                        <FaGoogle></FaGoogle> Login with Google
+                    </Button>
+                    <Button variant="primary" onClick={handleGithubLogin} type="submit" className='w-100 bg-white text-black border-dark fw-semibold mt-4'>
+                        <FaGithub></FaGithub> Login with Github
+                    </Button>
                 </Form>
             </div>
         </div>

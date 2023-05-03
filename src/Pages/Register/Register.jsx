@@ -3,11 +3,12 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import NavigationBar from '../../SharedPage/NavigationBar/NavigationBar';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Register = () => {
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
-    const { register, profile, verification } = useContext(AuthContext)
+    const { register, profile, verification, googleLogin, githubLogin } = useContext(AuthContext)
     const [accepted, setAccepted] = useState(false);
     const navigate = useNavigate()
 
@@ -82,6 +83,29 @@ const Register = () => {
         setAccepted(event.target.checked)
     }
 
+    const handleGoogleRegister = () => {
+        googleLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            setSuccess('Login Successful')
+            navigate('/login')
+        })
+        .catch(error => setError(error.message))
+    }
+
+
+    const handleGithubRegister = () => {
+        githubLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            setSuccess('Login Successful')
+            navigate('/login')
+        })
+        .catch(error => setError(error.message))
+    }
+
     return (
         <div>
             <NavigationBar></NavigationBar>
@@ -114,10 +138,17 @@ const Register = () => {
                     </Form.Group>
                     <p className='text-danger'>{error}</p>
                     <p className='text-success'>{success}</p>
-                    <Button variant="primary" disabled={!accepted} type="submit" className='w-100'>
+                    <Button variant="primary" disabled={!accepted} type="submit" className='w-100  fs-5'>
                         Register
                     </Button>
-                    <p className='mt-3'>Already Have An Account ? <Link to='/login' className='text-decoration-none'>Login</Link></p>
+                    <p className='mt-3 text-center'>Already Have An Account ? <Link to='/login' className='text-decoration-none'>Login</Link></p>
+                    <p className='text-center'>-----------------OR-----------------</p>
+                    <Button variant="primary" onClick={handleGoogleRegister} type="submit" className='w-100 bg-white text-black border-dark fw-semibold'>
+                       <FaGoogle></FaGoogle> Register with Google
+                    </Button>
+                    <Button variant="primary" onClick={handleGithubRegister} type="submit" className='w-100 bg-white text-black border-dark fw-semibold mt-4'>
+                       <FaGithub></FaGithub> Register with Github
+                    </Button>
                 </Form>
             </div>
         </div>

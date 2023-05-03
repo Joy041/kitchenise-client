@@ -1,10 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth'
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../firebase/firevase.config';
 
 
 export const AuthContext = createContext('')
 const auth = getAuth(app)
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider()
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState()
@@ -47,6 +49,14 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    const googleLogin = () => {
+       return signInWithPopup(auth, googleProvider)
+    }
+
+    const githubLogin = () => {
+      return signInWithPopup(auth, githubProvider)
+    }
+
     
     const userInfo = {
         register,
@@ -56,7 +66,9 @@ const AuthProvider = ({ children }) => {
         passwordReset,
         user,
         loading,
-        logout
+        logout,
+        googleLogin,
+        githubLogin
     } 
 
     return (
