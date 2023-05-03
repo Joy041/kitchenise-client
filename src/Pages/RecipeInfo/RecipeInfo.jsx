@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
-import Rating from 'react-rating';
 import { useLoaderData } from 'react-router-dom';
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const RecipeInfo = () => {
     const recipes = useLoaderData()
     const [use, setUse] = useState(false)
     const [use2, setUse2] = useState(false)
     const [use3, setUse3] = useState(false)
- 
+
     const { picture, name, description, number_of_recipes, years_of_experience, likes, recipes_1, recipes_2, recipes_3 } = recipes
     console.log(recipes)
 
@@ -51,11 +51,9 @@ const RecipeInfo = () => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold '>Rating : </span><Rating
-                                placeholderRating={recipes_1?.rating}
-                                emptySymbol={<FaRegStar></FaRegStar>}
-                                placeholderSymbol={<FaStar />}
-                                fullSymbol={<FaStar />}
-                                className='text-warning'
+                                style={{ maxWidth: 180 }}
+                                value={recipes_2?.rating}
+                                readOnly
                             />
                         </Card.Text>
                     </Card.Body>
@@ -73,11 +71,9 @@ const RecipeInfo = () => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold '>Rating : </span><Rating
-                                placeholderRating={recipes_2?.rating}
-                                emptySymbol={<FaRegStar></FaRegStar>}
-                                placeholderSymbol={<FaStar />}
-                                fullSymbol={<FaStar />}
-                                className='text-warning'
+                                style={{ maxWidth: 180 }}
+                                value={recipes_2?.rating}
+                                readOnly
                             />
                         </Card.Text>
                     </Card.Body>
@@ -95,11 +91,9 @@ const RecipeInfo = () => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold '>Rating : </span><Rating
-                                placeholderRating={recipes_3?.rating}
-                                emptySymbol={<FaRegStar></FaRegStar>}
-                                placeholderSymbol={<FaStar />}
-                                fullSymbol={<FaStar />}
-                                className='text-warning'
+                                style={{ maxWidth: 180 }}
+                                value={recipes_2?.rating}
+                                readOnly
                             />
                         </Card.Text>
                     </Card.Body>

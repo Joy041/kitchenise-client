@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/chef')
+                loader: () => fetch('https://kitchenise-web-server-joy041.vercel.app/chef')
             }
         ]
     },
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: ':id',
                 element: <RecipeInfo></RecipeInfo>,
-                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+                loader: ({ params }) => fetch(`https://kitchenise-web-server-joy041.vercel.app/chef/${params.id}`)
             }
         ]
     },

@@ -13,6 +13,8 @@ const Login = () => {
     const emailRef = useRef();
     const navigate = useNavigate();
     const location = useLocation();
+    const [accepted, setAccepted] = useState(false);
+
 
     const from = location.state?.from?.pathname || '/'
 
@@ -35,6 +37,7 @@ const Login = () => {
                 form.reset()
                 navigate(from, { replace: true })
             })
+            .catch(error => setError(error.message))
     }
 
     const handleForgetPass = () => {
@@ -71,6 +74,10 @@ const Login = () => {
         .catch(error => setError(error.message))
     }
 
+    const handleAccepted = (event) => {
+        setAccepted(event.target.checked)
+    }
+
 
 
 
@@ -91,11 +98,11 @@ const Login = () => {
                         <button onClick={handleForgetPass} className='border-0 bg-light mt-2 ps-0 text-decoration-underline' >Forget password</button>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" required />
+                        <Form.Check onClick={handleAccepted} type="checkbox" label="Check me out" required />
                     </Form.Group>
                     <p className='text-danger'>{error}</p>
                     <p className='text-success'>{success}</p>
-                    <Button variant="primary" type="submit" className='w-100'>
+                    <Button variant="primary" disabled={!accepted} type="submit" className='w-100'>
                         Login
                     </Button>
                     <p className='mt-3 text-center'>Don’t Have An Account ? <Link to='/register' className='text-decoration-none'>Register</Link></p>
