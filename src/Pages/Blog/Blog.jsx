@@ -24,7 +24,6 @@ const Blog = () => {
 
     return (
         <div>
-            <NavigationBar></NavigationBar>
             <div className='actual-receipt'>
                 <div>
                     <h4 className='text-center mt-5 fs-2'>Controlled vs Uncontrolled components</h4><hr className='w-50 mb-5 mx-auto' />

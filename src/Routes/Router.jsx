@@ -3,14 +3,15 @@ import Main from "../Layout/Main/Main";
 import Home from "../Pages/Home/Home";
 import RecipeInfo from "../Pages/RecipeInfo/RecipeInfo";
 import Login from "../Pages/Login/Login";
+import Blog from "../Pages/Blog/Blog";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../Route/PrivateRoute";
 import React, { Suspense } from 'react';
 import { Spinner } from "react-bootstrap";
-import Error from "../Pages/Error/Error";
+import Error from '../Pages/Error/Error'
+
 
 const Recipes = React.lazy(() => import("../Pages/Recipes/Recipes"));
-const Blog = React.lazy(() => import("../Pages/Blog/Blog"));
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,24 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('https://kitchenise-web-server-joy041.vercel.app/chef')
+            },
+            {
+                path: 'blog',
+                element: <Blog></Blog>
+            },
+            {
+
+                path: 'login',
+                element: <Login></Login>
+
+            },
+            {
+                path: 'register',
+                element: <Register></Register>
+            },
+            {
+                path: '*',
+                element: <Error></Error>
             }
         ]
     },
@@ -40,28 +59,10 @@ const router = createBrowserRouter([
             }
         ]
     },
-    {
-        path: 'blog',
-        element: <Suspense fallback={<p className="text-center mt-5">
-            <Spinner animation="grow" variant="success" />
-            <Spinner animation="grow" variant="danger" />
-            <Spinner animation="grow" variant="warning" />
-            <Spinner animation="grow" variant="info" className="me-3" /></p>}><Blog></Blog></Suspense>
-    },
-    {
 
-        path: 'login',
-        element: <Login></Login>
 
-    },
-    {
-        path: 'register',
-        element: <Register></Register>
-    },
-    {
-       path: '*',
-       element: <Error></Error>
-    }
+
+
 ])
 
 export default router;
