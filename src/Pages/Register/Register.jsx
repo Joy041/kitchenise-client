@@ -109,7 +109,7 @@ const Register = () => {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            <div className='mt-5 border w-50 mx-auto py-5 rounded bg-light'>
+            <div className='mt-md-5 border login-width mx-auto py-5 rounded bg-light'>
                 <h2 className='text-center'>Register your account</h2><hr className='w-75 mx-auto' />
                 <Form className='w-75 mx-auto mt-5' onSubmit={handelRegisterForm}>
                     <Form.Group className="mb-3" controlId="formBasicName">

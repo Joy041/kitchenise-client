@@ -1,0 +1,9 @@
+.login-width{
+    width: 50%;
+}
+
+@media screen and (max-width: 600px){
+    .login-width{
+        width: 100%;
+    }
+}
