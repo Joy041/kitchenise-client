@@ -1,12 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main/Main";
 import Home from "../Pages/Home/Home";
-import Recipes from "../Pages/Recipes/Recipes";
 import RecipeInfo from "../Pages/RecipeInfo/RecipeInfo";
-import Blog from "../Pages/Blog/Blog";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "../Route/PrivateRoute";
+import React, { Suspense } from 'react';
+import { Spinner } from "react-bootstrap";
+
+const Recipes = React.lazy(() => import("../Pages/Recipes/Recipes"));
+const Blog = React.lazy(() => import("../Pages/Blog/Blog"));
 
 const router = createBrowserRouter([
     {
@@ -21,25 +24,34 @@ const router = createBrowserRouter([
         ]
     },
     {
-      path: 'recipes',
-      element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-      children: [
-        {
-            path: ':id',
-            element: <RecipeInfo></RecipeInfo>,
-            loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
-        }
-      ]
+        path: 'recipes',
+        element: <PrivateRoute><Suspense fallback={<p className="text-center mt-5">
+            <Spinner animation="grow" variant="success" />
+            <Spinner animation="grow" variant="danger" />
+            <Spinner animation="grow" variant="warning" />
+            <Spinner animation="grow" variant="info" className="me-3" /></p>}>
+            <Recipes></Recipes></Suspense></PrivateRoute>,
+        children: [
+            {
+                path: ':id',
+                element: <RecipeInfo></RecipeInfo>,
+                loader: ({ params }) => fetch(`http://localhost:5000/chef/${params.id}`)
+            }
+        ]
     },
     {
         path: 'blog',
-        element: <Blog></Blog>
+        element: <Suspense fallback={<p className="text-center mt-5">
+            <Spinner animation="grow" variant="success" />
+            <Spinner animation="grow" variant="danger" />
+            <Spinner animation="grow" variant="warning" />
+            <Spinner animation="grow" variant="info" className="me-3" /></p>}><Blog></Blog></Suspense>
     },
     {
-        
+
         path: 'login',
         element: <Login></Login>
-        
+
     },
     {
         path: 'register',

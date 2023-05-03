@@ -25,10 +25,10 @@ const NavigationBar = () => {
                     </Nav>
                     <Nav>
                     <Nav.Link href="#deets">{
-                                user ? <div className='fw-bold'>Welcome <img src={user.photoURL} className={`me-3 rounded`} style={{ width: '40px', }} alt="" /></div> : <>Profile</>
+                                user ? <div className='fw-bold'><a href="#" data-toggle="tooltip" title={`${user.displayName}`}> <img src={user.photoURL} className={`me-3 rounded`} style={{ width: '30px', }} alt="" /></a> </div> : <>Profile</>
                             }</Nav.Link>
                             <Button variant="secondary">{
-                                user ? <Link onClick={handleLogout} className='text-decoration-none text-black' to = '/login'>Logout</Link> : <Link to='/login' className='text-decoration-none text-black' >Login</Link>
+                                user ? <Link onClick={handleLogout} className='text-decoration-none text-black px-3' to = '/login'>Logout</Link> : <Link to='/login' className='text-decoration-none text-black' >Login</Link>
                             }</Button>
                     </Nav>
                 </Navbar.Collapse>
