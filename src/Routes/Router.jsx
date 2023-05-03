@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoute from "../Route/PrivateRoute";
 import React, { Suspense } from 'react';
 import { Spinner } from "react-bootstrap";
+import Error from "../Pages/Error/Error";
 
 const Recipes = React.lazy(() => import("../Pages/Recipes/Recipes"));
 const Blog = React.lazy(() => import("../Pages/Blog/Blog"));
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
     {
         path: 'register',
         element: <Register></Register>
+    },
+    {
+       path: '*',
+       element: <Error></Error>
     }
 ])
 
