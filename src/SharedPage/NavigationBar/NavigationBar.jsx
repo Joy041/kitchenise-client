@@ -20,8 +20,8 @@ const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link to = '/' className='text-decoration-none text-black fw-semibold fs-5'>Home</Link>
-                        <Link to = '/blog' className='text-decoration-none text-black fw-semibold fs-5 mx-3'>Blog</Link>
+                        <Link to = '/' className='text-decoration-none text-black fw-semibold fs-5 me-3'>Home</Link>
+                        <Link to = '/blog' className='text-decoration-none text-black fw-semibold fs-5 me-3'>Blog</Link>
                     </Nav>
                     <Nav>
                     <Nav.Link href="#deets">{

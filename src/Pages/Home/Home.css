@@ -7,3 +7,10 @@
 .background-color{
     background-color: rgb(233, 197, 105);
 }
+
+@media screen and (max-width: 600px){
+   .make-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+   }
+}

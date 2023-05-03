@@ -3,13 +3,14 @@ import { Card, Container, InputGroup } from 'react-bootstrap';
 import first from '../../assets/feedback-1.jpg'
 import second from '../../assets/feedback-2.jpg'
 import third from '../../assets/feedback4.jpg'
+import './Feedback.css'
 
 const Feedback = () => {
     return (
         <div className='py-5'>
             <h1 className='text-center mt-5'>Feedback</h1><hr className='w-25 mx-auto text-success' />
-            <div className='d-md-flex justify-content-md-center'>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+            <div className='d-md-flex justify-content-md-center feedback'>
+                <Card style={{ width: '18rem' }} className='mt-4'>
                     <Card.Header as="h5"><img src={first} className='rounded-circle me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -17,7 +18,7 @@ const Feedback = () => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-5 mt-4'>
                     <Card.Header as="h5"><img src={second} className='rounded-circle me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
                     <Card.Body>
                         <Card.Text>
@@ -25,7 +26,7 @@ const Feedback = () => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mt-4'>
                     <Card.Header as="h5"><img src={third} className='rounded-circle me-3' style={{ width: '40px' }} alt="" />Arthur Hilton</Card.Header>
                     <Card.Body>
                         <Card.Text>

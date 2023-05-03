@@ -10,8 +10,7 @@ const RecipeInfo = () => {
     const [use2, setUse2] = useState(false)
     const [use3, setUse3] = useState(false)
 
-    const { picture, name, description, number_of_recipes, years_of_experience, likes, recipes_1, recipes_2, recipes_3 } = recipes
-    console.log(recipes)
+    const { picture, name, description, number_of_recipes, years_of_experience, likes, recipes_1, recipes_2, recipes_3 } = recipes;
 
     const handleFavoriteBtn1 = () => {
         alert('Add to favorite')
@@ -39,7 +38,7 @@ const RecipeInfo = () => {
                 </Card.Body>
             </Card>
             <div className='d-md-flex justify-content-md-between mt-5 mb-5'>
-                <Card style={{ width: '18rem' }} className='ms-md-0 ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" style={{ height: '200px' }} src={recipes_1?.img} />
                     <Card.Body>
                         <Card.Title className='fw-bold fs-3'>{recipes_1?.recipe_name}</Card.Title> <hr className=' text-success ' />
@@ -51,15 +50,15 @@ const RecipeInfo = () => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold '>Rating : </span><Rating
-                                style={{ maxWidth: 180 }}
-                                value={recipes_2?.rating}
+                                style={{ maxWidth: 150 }}
+                                value={recipes_1?.rating}
                                 readOnly
                             />
                         </Card.Text>
                     </Card.Body>
                     <Button variant="primary" onClick={handleFavoriteBtn1} disabled={use} className='w-50 mx-auto mb-3'>Favorite</Button>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" style={{ height: '200px' }} src={recipes_2?.img} />
                     <Card.Body>
                         <Card.Title className='fw-bold fs-3'>{recipes_2?.recipe_name}</Card.Title> <hr className=' text-success ' />
@@ -71,7 +70,7 @@ const RecipeInfo = () => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold '>Rating : </span><Rating
-                                style={{ maxWidth: 180 }}
+                                style={{ maxWidth: 150 }}
                                 value={recipes_2?.rating}
                                 readOnly
                             />
@@ -79,7 +78,7 @@ const RecipeInfo = () => {
                     </Card.Body>
                     <Button variant="primary" onClick={handleFavoriteBtn2} disabled={use2} className='w-50 mx-auto mb-3'>Favorite</Button>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" style={{ height: '200px' }} src={recipes_3?.img} />
                     <Card.Body>
                         <Card.Title className='fw-bold fs-3'>{recipes_3?.recipe_name}</Card.Title> <hr className=' text-success ' />
@@ -91,8 +90,8 @@ const RecipeInfo = () => {
                         </Card.Text>
                         <Card.Text>
                             <span className='fw-bold '>Rating : </span><Rating
-                                style={{ maxWidth: 180 }}
-                                value={recipes_2?.rating}
+                                style={{ maxWidth: 150 }}
+                                value={recipes_3?.rating}
                                 readOnly
                             />
                         </Card.Text>

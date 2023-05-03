@@ -1,5 +1,13 @@
 .footer-grid{
     display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-columns: 3fr 2fr 1fr;
     gap: 20px;
+}
+
+@media screen and (max-width: 600px){
+    .footer-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }

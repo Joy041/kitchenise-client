@@ -9,8 +9,8 @@ const NewRecipes = () => {
     return (
         <div className='bg-light py-5 mt-'>
             <h1 className='text-center mt-5 mb-2 fw-bold fs-1'>New Recipes</h1><hr className='w-25 mx-auto text-success mb-5' />
-            <div className='d-md-flex justify-content-md-evenly ms-5 mt-5'>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+            <div className='d-md-flex justify-content-md-evenly ms-md-5 mt-md-5'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" style={{height: '200px'}} src={firstRecipe} />
                     <Card.Body>
                         <Card.Title className='fw-bold'>Tandoori Chicken</Card.Title>
@@ -20,7 +20,7 @@ const NewRecipes = () => {
                     </Card.Body>
                     <Button variant="primary" className='w-75 mx-auto mb-3'>Let's cook</Button>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" c style={{height: '200px'}} src={secondRecipe} />
                     <Card.Body>
                         <Card.Title className='fw-bold'>Chilaquiles</Card.Title>
@@ -31,7 +31,7 @@ const NewRecipes = () => {
                     </Card.Body>
                     <Button variant="primary" className='w-75 mx-auto mb-3'> Let's cook</Button>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" style={{height: '200px'}} src={thirdRecipe} />
                     <Card.Body>
                         <Card.Title className='fw-bold'>Sea Urchin Pasta</Card.Title>
@@ -41,7 +41,7 @@ const NewRecipes = () => {
                     </Card.Body>
                     <Button variant="primary" className='w-75 mx-auto mb-3'>Let's cook</Button>
                 </Card>
-                <Card style={{ width: '18rem' }} className='ms-5 mt-4'>
+                <Card style={{ width: '18rem' }} className='mx-auto mt-4'>
                     <Card.Img variant="top" style={{height: '200px'}} src={forthRecipe} />
                     <Card.Body>
                         <Card.Title className='fw-bold'>Korma</Card.Title>

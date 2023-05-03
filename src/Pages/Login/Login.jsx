@@ -32,7 +32,6 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
                 setSuccess('Login successful')
                 form.reset()
                 navigate(from, { replace: true })
@@ -55,7 +54,6 @@ const Login = () => {
         googleLogin()
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser)
             setSuccess('Login Successful')
             navigate(from, { replace: true })
         })
@@ -67,7 +65,6 @@ const Login = () => {
         githubLogin()
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser)
             setSuccess('Login Successful')
             navigate(from, { replace: true })
         })

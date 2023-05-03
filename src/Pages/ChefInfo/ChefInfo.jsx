@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 
 const ChefInfo = ({ chef }) => {
-    console.log(chef.name)
     const { _id, name, picture, years_of_experience, number_of_recipes, likes } = chef;
+    
     return (
-        <div>
+        <div className=' d-flex justify-content-center align-items-center'>
             <Card style={{ width: '18rem' }} className='h-100'>
                 <Card.Img variant="top" className='h-100' src={picture} />
                 <Card.Body>
