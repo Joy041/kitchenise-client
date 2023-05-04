@@ -1,0 +1,15 @@
+.active{
+    color: aquamarine;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
+    margin-right: 10px;
+}
+
+.notActive{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 19px;
+    margin-right: 10px;
+}

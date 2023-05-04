@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, InputGroup } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import first from '../../assets/feedback-1.jpg'
 import second from '../../assets/feedback-2.jpg'
 import third from '../../assets/feedback4.jpg'

@@ -1,7 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import NavigationBar from '../../SharedPage/NavigationBar/NavigationBar';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import './Login.css'

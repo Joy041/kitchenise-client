@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavigationBar = () => {
    const {user, logout} = useContext(AuthContext)
@@ -20,8 +21,9 @@ const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
-                        <Link to = '/' className='text-decoration-none text-black fw-semibold fs-5 me-3'>Home</Link>
-                        <Link to = '/blog' className='text-decoration-none text-black fw-semibold fs-5 me-3'>Blog</Link>
+                    
+                        <ActiveLink to = '/'>Home</ActiveLink>
+                        <ActiveLink to = '/blog'>Blog</ActiveLink>
                     </Nav>
                     <Nav>
                     <Nav.Link href="#deets">{

@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-import NavigationBar from '../../SharedPage/NavigationBar/NavigationBar';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Register = () => {
