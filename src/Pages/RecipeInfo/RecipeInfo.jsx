@@ -3,6 +3,8 @@ import { Button, Card, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeInfo = () => {
     const recipes = useLoaderData()
@@ -13,15 +15,15 @@ const RecipeInfo = () => {
     const { picture, name, description, number_of_recipes, years_of_experience, likes, recipes_1, recipes_2, recipes_3 } = recipes;
 
     const handleFavoriteBtn1 = () => {
-        alert('Add to favorite')
+        toast('Add to favorite')
         setUse(true)
     }
     const handleFavoriteBtn2 = () => {
-        alert('Add to favorite')
+        toast('Add to favorite')
         setUse2(true)
     }
     const handleFavoriteBtn3 = () => {
-        alert('Add to favorite')
+        toast('Add to favorite')
         setUse3(true)
     }
     return (
@@ -99,6 +101,7 @@ const RecipeInfo = () => {
                     <Button variant="primary" onClick={handleFavoriteBtn3} disabled={use3} className='w-50 mx-auto mb-3'>Favorite</Button>
                 </Card>
             </div>
+            <ToastContainer />
         </Container>
     );
 };
